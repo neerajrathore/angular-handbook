@@ -1,0 +1,118 @@
+<!-- <app-sidebar [item]= "item"></app-sidebar> -->
+<app-sidebar (newItemEvent)="addItem($event)"></app-sidebar>
+<div class="sidenav">
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+<div class="main">
+<p>Item Details</p>
+<p>
+    <ngb-alert [dismissible]="false">
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </ngb-alert>
+  </p>
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel title="Simple">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+        craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+        labore sustainable VHS.
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <span>&#9733; <b>Fancy</b> title &#9733;</span>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+        craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+        labore sustainable VHS.
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Disabled" [disabled]="true">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+        craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+        labore sustainable VHS.
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+  
+<button class="btn btn-success">Button</button>
+
+<!-- <div *ngFor="let item of products">
+    <p>Description: {{item.description}}</p>
+    <p>ID: {{item.id}} </p>
+    <img style="height:100%; width: 100%;" src="{{ item.imageUrl }}" />
+    <p>Name: {{item.name}}</p>
+    <p>Price: {{item.price}}</p>
+    <p>Quantity: {{item.quantity}} </p>
+</div> -->
+<p>Table is just a mapping of objects to table rows with <code>ngFor</code></p>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Student Name</th>
+    <th scope="col">Father Name</th>
+    <th scope="col">Student Address</th>
+    <th scope="col">Student Mobile</th>
+    <th scope="col">Student Email</th>
+    <th scope="col">Student Department</th>
+    <th scope="col">Student DOB</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of studentList; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>
+      <!-- <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+      {{ country.name }} -->
+      {{item.student_name}}
+    </td>   
+    <td>{{ item.father_name}}</td>
+    <td>{{ item.student_address }}</td>
+    <td>{{ item.student_mobile}}</td>
+    <td>{{ item.student_email }}</td>
+    <td>{{ item.student_department}}</td>
+    <td>{{ item.studentdob}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<input type="text" [formControl]="typeahead" placeholder="Contry Name" (input)="suggest()" autocomplete="off">
+<div class="suggestions" *ngIf="suggestions.length">
+  <div id="container" *ngFor="let s of suggestions">
+    <!-- <p *ngFor="let s of suggestions">{{s}}</p> -->
+    {{s}}
+  </div>
+  
+  <!-- <p *ngFor="let s of suggestions">{{s}}</p> -->
+</div>
+<button (click)="this.global.logout()">logout</button>
+<label>{{this.global.userName}}</label>
+<button (click)="redirect()">Site</button>
+<input type="text" name="t1" placeholder="Enter Name" (input)="search()" [(ngModel)]="t1">
+<label>{{fName}}</label>
+<div >
+  <!-- <span>{{emp.getId()}} - {{emp.getName()}} - {{emp.getAddress()}} - <span>{{emp.getYearlySalary()}} -->
+<ol>
+  <li *ngFor="let emp of test">{{emp.getId()}} - {{emp.getName()}} - {{emp.getAddress()}}</li>
+</ol>
+  </div>
+  <ul>
+    <li *ngFor="let item of items">{{item}}</li>
+  </ul>
+<!-- <div>hello</div> -->

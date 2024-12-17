@@ -1,0 +1,21 @@
+
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <label for="first-name">First Name: </label>
+    <input id="firstMame" class="form-control" minlength="10" maxlength="10"
+       formControlName="firstName" >
+
+       <div color="danger" *ngIf="isSubmitted || errorControl.firstName && errorControl.firstName.errors && (errorControl.firstName.dirty || errorControl.firstName.touched)">
+        <label color="danger" *ngIf="errorControl.firstName.errors.required">Name is required</label>
+        <!-- <ion-text color="danger" *ngIf="errorControl.mobileNumber.errors.required">Mobile is required</ion-text>
+        <ion-text color="danger" *ngIf="errorControl.mobileNumber.errors.minlength || errorControl.mobileNumber.errors.pattern">Invalid mobile no.</ion-text> -->
+      </div>
+  
+  
+    <label for="last-name">Last Name: </label>
+    <input id="lastName" type="text" formControlName="lastName" class="form-control" minlength="10" maxlength="10">
+    
+    <p>Complete the form to enable button.</p>
+    <button type="submit" >Submit</button>
+  </form>
