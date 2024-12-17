@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule,NgForm } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 import { ApiService } from './api.service'; 
 //import {DataTablesModule} from 'angular-datatables'; 
-import { MyserviceService } from './myservice.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddStudentComponent } from './add-student/add-student.component';
@@ -41,7 +40,7 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     // NgForm
   ],
-  providers: [MyserviceService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

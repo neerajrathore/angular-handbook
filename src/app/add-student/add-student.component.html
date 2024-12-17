@@ -8,8 +8,8 @@
 
        <div color="danger" *ngIf="isSubmitted || errorControl.firstName && errorControl.firstName.errors && (errorControl.firstName.dirty || errorControl.firstName.touched)">
         <label color="danger" *ngIf="errorControl.firstName.errors.required">Name is required</label>
-        <!-- <ion-text color="danger" *ngIf="errorControl.mobileNumber.errors.required">Mobile is required</ion-text>
-        <ion-text color="danger" *ngIf="errorControl.mobileNumber.errors.minlength || errorControl.mobileNumber.errors.pattern">Invalid mobile no.</ion-text> -->
+        <label color="danger" *ngIf="errorControl.mobileNumber.errors.required">Mobile is required</label>
+        <label color="danger" *ngIf="errorControl.mobileNumber.errors.minlength || errorControl.mobileNumber.errors.pattern">Invalid mobile no.</label>
       </div>
   
   
