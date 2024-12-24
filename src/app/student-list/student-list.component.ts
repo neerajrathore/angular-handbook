@@ -83,17 +83,14 @@ export class StudentListComponent implements OnInit {
   ngOnInit() {
     this.getUserProfile();
     this.getStudentList();
-    this.global.getDataFromLocalStorage("").subscribe((data: any) => {
-      // this.persondata = Array.from(Object.keys(data), k=>data[k]);
-      // console.log(this.persondata);
-      console.log("data", data);
-      this.global.profileData();
-      this.global.setData();
-      this.global.userData();
-
-
-
-    });
+    // this.global.getDataFromLocalStorage("").subscribe((data: any) => {
+    //   // this.persondata = Array.from(Object.keys(data), k=>data[k]);
+    //   // console.log(this.persondata);
+    //   console.log("data", data);
+    //   this.global.profileData();
+    //   this.global.setData();
+    //   this.global.userData();
+    // });
     console.log(this.test);
   }
 
